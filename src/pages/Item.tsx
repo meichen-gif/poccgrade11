@@ -1,0 +1,117 @@
+import {
+    ScatterChart,
+    Scatter,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+} from "recharts";
+
+function Item() {
+  const data = [
+    { x: 0, y: 0 },
+    { x: 0, y: 1 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0.82, y: 0 },
+    { x: 2.76, y: 0 },
+    { x: 0.08, y: 1 },
+    { x: 0, y: 0 },
+    { x: 6.41, y: 4 },
+    { x: 0.33, y: 1 },
+    { x: 1.7, y: 1 },
+    { x: 1.02, y: 0 },
+    { x: 0.68, y: 0 },
+    { x: 0.34, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0.34, y: 1 },
+    { x: 0.16, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 12.72, y: 11.84 },
+    { x: 11.17, y: 11 },
+    { x: 0.1, y: 0 },
+    { x: 1.25, y: 0 },
+    { x: 0.32, y: 0 },
+    { x: 0, y: 0 },
+    { x: 1.21, y: 1 },
+    { x: 1.91, y: 4 },
+    { x: 0.51, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0.85, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0.08, y: 0 },
+    { x: 0.51, y: 3 },
+    { x: 1.16, y: 0 },
+    { x: 0.34, y: 1 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 33.57, y: 36 },
+    { x: 2, y: 2 },
+    { x: 2.75, y: 2 },
+    { x: 0, y: 0 },
+    { x: 0.48, y: 0 },
+    { x: 11.99, y: 15 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0.4, y: 0 },
+    { x: 0.17, y: 0 },
+    { x: 2.55, y: 5 },
+    { x: 0, y: 0 },
+    { x: 9.41, y: 8 },
+    { x: 0, y: 0 },
+    { x: 33.79, y: 45 },
+    { x: 1.19, y: 0 },
+    { x: 16.75, y: 19 },
+    { x: 1.5, y: 0 },
+    { x: 63.5, y: 63 },
+    { x: 15.41, y: 22 },
+    { x: 37, y: 46 },
+    { x: 0, y: 0 },
+    { x: 7, y: 5 },
+    { x: 0.74, y: 0 },
+    { x: 0.41, y: 0 },
+    { x: 8.49, y: 17.67 },
+    { x: 20.95, y: 34 },
+    { x: 20.7, y: 38 },
+    { x: 36.31, y: 29.66 },
+    { x: 12.07, y: 11 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 3.9, y: 0 },
+    { x: 0, y: 0 },
+    { x: 2.37, y: 4 },
+    { x: 1.53, y: 1 },
+    { x: 10.6, y: 0 },
+    { x: 0, y: 0 },
+    { x: 46.66, y: 47 },
+
+    // continue the rest of your data here...
+  ]; }
+
+  return data;
+
+    const lineData = data.map((point))=>({
+        x: PointerEvent.x,
+        y: m * PointerEvent.X + b,
+    })  
+    return (
+        <div>
+            <h1>Regresi Linear - by melitta/<h1>
+                <ScatterChart width={400} heught={500}>
+                    <CartesianGrid/>
+                    <XAxis type="number" dataKey="x/>
+                    <YAxis type="number" dataKey="y"/>
+                <Tooltip/>
+                <Scatter data={data} fill="pink"/>
+                <Scatter data={lineData} line shape="noone" fill="blue"/> 
+                </ScatterChart>
+            
+            </h1>
+        </div>
+    )
+}
+export default Item
