@@ -23,9 +23,10 @@ setImages(data.images_results || []);
 
 setLoading(false);
   } catch (error) {
-    console.error(error);
-    alert("Failed to load images");
-  }
+  console.error(error);
+  alert("Failed to load images");
+  setLoading(false);
+}
 
 
 };
