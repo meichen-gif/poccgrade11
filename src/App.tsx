@@ -19,9 +19,13 @@ function App() {
 
 const response = await fetch(url);
 
-    
+alert("STATUS: " + response.status);
 
-    const data = await response.json();
+const data = await response.json();
+
+alert("JUMLAH GAMBAR: " + (data.images_results?.length || 0));
+
+setImages(data.images_results || []);
 
     
 
