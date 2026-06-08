@@ -15,15 +15,19 @@ const searchFlowers = async () => {
       `https://serpapi.com/search.json?engine=google_images&q=${search}&api_key=${import.meta.env.VITE_SERPAPI_KEY}`
     );
 
-    const data = await response.json();
+   const data = await response.json();
 
-    setImages(data.images_results || []);
+console.log("DATA:", data);
+
+setImages(data.images_results || []);
+
+setLoading(false);
   } catch (error) {
     console.error(error);
     alert("Failed to load images");
   }
 
-  setLoading(false);
+
 };
 
   return (
