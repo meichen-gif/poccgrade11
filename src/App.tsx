@@ -5,35 +5,22 @@ function App() {
   const [images, setImages] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const searchFlowers = async () => {
-  
-
+const searchFlowers = async () => {
   if (!search) return;
 
   setLoading(true);
 
   try {
-    const url = `https://corsproxy.io/?${encodeURIComponent(
-  `https://serpapi.com/search.json?engine=google_images&q=${search}&api_key=${import.meta.env.VITE_SERPAPI_KEY}`
-)}`;
+    const response = await fetch(
+      `https://serpapi.com/search.json?engine=google_images&q=${search}&api_key=${import.meta.env.VITE_SERPAPI_KEY}`
+    );
 
-const response = await fetch(url);
-
-alert("STATUS: " + response.status);
-
-const data = await response.json();
-
-alert("JUMLAH GAMBAR: " + (data.images_results?.length || 0));
-
-setImages(data.images_results || []);
-
-    
+    const data = await response.json();
 
     setImages(data.images_results || []);
-  } catch (error: any) {
+  } catch (error) {
     console.error(error);
-alert("Failed to load images");
-    console.error(error);
+    alert("Failed to load images");
   }
 
   setLoading(false);
