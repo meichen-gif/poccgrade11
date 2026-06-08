@@ -12,8 +12,8 @@ const searchFlowers = async () => {
 
   try {
     const response = await fetch(
-      `https://serpapi.com/search.json?engine=google_images&q=${search}&api_key=${import.meta.env.VITE_SERPAPI_KEY}`
-    );
+  `/api/search?q=${encodeURIComponent(search)}`
+);
 
    const data = await response.json();
 
